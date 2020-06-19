@@ -41,6 +41,9 @@ class UrlForm extends Component {
                     <h3>URL</h3>
                 </Card.Title>
                 <div>
+                    <input type='text' className='input-group-text w-100 mb-2' name='url' onChange={this.onChangeUrlHandler} value={this.state.url} placeholder='Type the URL you wish to seek the images'></input>
+                    <Button type='button' className="btn btn-success ml-2" onClick={this.onSubmitUrl} disabled={this.state.loading}>{!this.state.loading ? 'Search' : 'Loading...'}</Button>
+                    <hr></hr>
                     {
                         !this.state.response ?
                             null :
@@ -52,12 +55,6 @@ class UrlForm extends Component {
                                     <Link to='/images-list'>Ver imagens encontradas</Link>
                                 </Alert>
                     }
-                    {/*images.map((image) => (
-                        JSON.stringify(image)
-                    ))*/}
-                    <input type='text' className='input-group-text w-100 mb-2' name='url' onChange={this.onChangeUrlHandler} value={this.state.url} placeholder='Type the URL you wish to seek the images'></input>
-                    <Button type='button' className="btn btn-success ml-2" onClick={this.onSubmitUrl} disabled={this.state.loading}>{!this.state.loading ? 'Search' : 'Loading...'}</Button>
-
                 </div>
             </Card>
         );
