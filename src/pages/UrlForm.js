@@ -26,7 +26,6 @@ class UrlForm extends Component {
     }
 
     render() {
-        console.log(process.env)
         this.socket.on('urlEventSubmit', (receivedInfo) => {
             if (!receivedInfo.loading && receivedInfo.data !== undefined) {
                 this.setState({ response: true })
@@ -39,25 +38,25 @@ class UrlForm extends Component {
         return (
             <Card>
                 <Card.Title>
-                    <h3>Digite a URL</h3>
+                    <h3>URL</h3>
                 </Card.Title>
                 <div>
                     {
                         !this.state.response ?
                             null :
                             images.length === 0 ?
-                                <Alert variant='danger'>Url nao contem nenhuma imagem</Alert> :
+                                <Alert variant='danger'>Url does not have any image or it is invalid</Alert> :
                                 <Alert variant='success'>
-                                    {images.length} {images.length === 1 ? ' imagem encontrada' : 'imagens encontradas'}
+                                    {images.length} {images.length === 1 ? ' image found' : 'images found'}
                                     <hr />
-                                    <Link to='/album?albumId='>Ver imagens encontradas</Link>
+                                    <Link to='/images-list'>Ver imagens encontradas</Link>
                                 </Alert>
                     }
                     {/*images.map((image) => (
                         JSON.stringify(image)
                     ))*/}
-                    <input type='text' name='url' onChange={this.onChangeUrlHandler} value={this.state.url} placeholder='digite a url'></input>
-                    <Button type='button' className="btn btn-success ml-2" onClick={this.onSubmitUrl} disabled={this.state.loading}>{!this.state.loading ? 'Pesquisar' : 'Carregando...'}</Button>
+                    <input type='text' className='input-group-text w-100 mb-2' name='url' onChange={this.onChangeUrlHandler} value={this.state.url} placeholder='Type the URL you wish to seek the images'></input>
+                    <Button type='button' className="btn btn-success ml-2" onClick={this.onSubmitUrl} disabled={this.state.loading}>{!this.state.loading ? 'Search' : 'Loading...'}</Button>
 
                 </div>
             </Card>

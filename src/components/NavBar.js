@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
-import {
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
+/*import {
     Link
 } from 'react-router-dom'
-
+*/
 class NavBar extends Component {
     render() {
         return (

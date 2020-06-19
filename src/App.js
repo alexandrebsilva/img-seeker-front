@@ -38,7 +38,7 @@ class App extends Component {
                 <ImagesList />
               </Route>
               <Route path="/">
-                {null}
+                <UrlForm />
               </Route>
             </Switch>
           </Router>
