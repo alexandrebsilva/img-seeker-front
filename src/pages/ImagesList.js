@@ -66,7 +66,7 @@ class ImageList extends Component {
                         <>
                             <Alert variant='warning'>There are no saved images</Alert>
                             <br />
-                            <Link to='/images-list'>Search images</Link></> :
+                            <Link to='/search'>Search images</Link></> :
                         null
                 }
                 {this.state.collections.map((domain) => (domain))}

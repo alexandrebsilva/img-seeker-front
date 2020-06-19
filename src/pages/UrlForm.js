@@ -52,7 +52,7 @@ class UrlForm extends Component {
                                 <Alert variant='success'>
                                     {images.length} {images.length === 1 ? ' image found' : 'images found'}
                                     <hr />
-                                    <Link to='/images-list'>Ver imagens encontradas</Link>
+                                    <Link to='/images-list'>Check images</Link>
                                 </Alert>
                     }
                 </div>
