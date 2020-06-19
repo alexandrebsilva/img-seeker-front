@@ -14,7 +14,6 @@ import NavBar from './components/NavBar';
 import { Container } from 'react-bootstrap';
 import UrlForm from './pages/UrlForm';
 import ImagesList from './pages/ImagesList';
-import AlbumsList from './pages/AlbumsList';
 
 
 class App extends Component {
@@ -34,9 +33,6 @@ class App extends Component {
             <Switch>
               <Route path="/search">
                 <UrlForm />
-              </Route>
-              <Route path="/albums">
-                <AlbumsList />
               </Route>
               <Route path="/images-list">
                 <ImagesList />

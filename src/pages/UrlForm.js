@@ -9,13 +9,12 @@ class UrlForm extends Component {
         super(props)
 
         this.state = {
-            serverURL: 'http://localhost:4000',
             response: false,
             imgsReceived: [],
             url: '',
             loading: false,
         }
-        this.socket = socketIOClient(this.state.serverURL)
+        this.socket = socketIOClient(process.env.REACT_APP_SERVER_URL,)
     }
 
     onChangeUrlHandler = (event) => {
@@ -27,8 +26,8 @@ class UrlForm extends Component {
     }
 
     render() {
+        console.log(process.env)
         this.socket.on('urlEventSubmit', (receivedInfo) => {
-            console.log(receivedInfo)
             if (!receivedInfo.loading && receivedInfo.data !== undefined) {
                 this.setState({ response: true })
             }
